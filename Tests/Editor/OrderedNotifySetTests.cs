@@ -4,7 +4,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 
 
-namespace CrazyPanda.Poker.Collections.Tests
+namespace CrazyPanda.UnityCore.Collections.Tests
 {
 	public sealed class OrderedNotifySetTests
 	{
