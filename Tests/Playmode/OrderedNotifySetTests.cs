@@ -6,7 +6,9 @@ using System.Collections.Generic;
 
 namespace CrazyPanda.UnityCore.Collections.Tests
 {
-	public sealed class OrderedNotifySetTests
+    [NUnit.Framework.Category("ModuleTests")]
+    [NUnit.Framework.Category("LocalTests")]
+    public sealed class OrderedNotifySetTests
 	{
 		private OrderedNotifySet< object > _set;
 
