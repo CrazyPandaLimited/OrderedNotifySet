@@ -20,7 +20,7 @@ namespace CrazyPanda.UnityCore.Collections
 		/// <summary>
 		/// Rise after collection changed
 		/// </summary>
-		event EventHandler< NotifySetChangedEventArgs< T > > OnCollectionChanged;
+		event Action< NotifySetChangedEventArgs< T > > OnCollectionChanged;
 		#endregion
 
 		#region Public Members

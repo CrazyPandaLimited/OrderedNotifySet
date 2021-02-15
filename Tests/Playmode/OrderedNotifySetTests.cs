@@ -22,7 +22,7 @@ namespace CrazyPanda.UnityCore.Collections.Tests
 
 			//init event handle
 			_lastEventArgs = null;
-			_set.OnCollectionChanged += ( sender, args ) => _lastEventArgs = args;
+			_set.OnCollectionChanged += ( args ) => _lastEventArgs = args;
 		}
 
 		[ Test ]

@@ -27,7 +27,7 @@ namespace CrazyPanda.UnityCore.Collections
 		//.........................................................................................................//
 
 		#region Public Events
-		public event EventHandler< NotifySetChangedEventArgs< T > > OnCollectionChanged = delegate { };
+		public event Action< NotifySetChangedEventArgs< T > > OnCollectionChanged;
 		#endregion
 
 		#region Public Properties
@@ -85,7 +85,7 @@ namespace CrazyPanda.UnityCore.Collections
 			_elementsList.Clear();
 
 			//rise clear event
-			OnCollectionChanged( this, NotifySetChangedEventArgs< T >.ConstructClear() );
+			OnCollectionChanged?.Invoke( NotifySetChangedEventArgs< T >.ConstructClear() );
 		}
 
 		public bool Contains( T item )
@@ -118,7 +118,7 @@ namespace CrazyPanda.UnityCore.Collections
 
 			//rise change event
 			var args = NotifySetChangedEventArgs<T>.ConstructRemoveAction( item );
-			OnCollectionChanged( this, args );
+            OnCollectionChanged?.Invoke( args );
 
 			return true;
 		}
@@ -226,7 +226,7 @@ namespace CrazyPanda.UnityCore.Collections
 
 			//rise event
 			var args = after ? NotifySetChangedEventArgs< T >.ConstructAddAfterAction( item, newItem ) : NotifySetChangedEventArgs< T >.ConstructAddBeforeAction( item, newItem );
-			OnCollectionChanged( this, args );
+            OnCollectionChanged?.Invoke( args );
 		}
 
 		/// <summary>
@@ -247,8 +247,8 @@ namespace CrazyPanda.UnityCore.Collections
 			LinkedListNode< T > newNode = _elementsList.AddFirst( item );
 			_elementsMap.Add( item, newNode );
 
-			//change event
-			OnCollectionChanged( this, NotifySetChangedEventArgs< T >.ConstructAddFirst( item ) );
+            //change event
+            OnCollectionChanged?.Invoke( NotifySetChangedEventArgs< T >.ConstructAddFirst( item ) );
 			return true;
 		}
 		#endregion
