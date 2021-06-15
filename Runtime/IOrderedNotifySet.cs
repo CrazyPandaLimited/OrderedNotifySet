@@ -16,14 +16,11 @@ namespace CrazyPanda.UnityCore.Collections
 		//Interface block
 		//.........................................................................................................//
 
-		#region Public Events
 		/// <summary>
 		/// Rise after collection changed
 		/// </summary>
 		event Action< NotifySetChangedEventArgs< T > > OnCollectionChanged;
-		#endregion
 
-		#region Public Members
 		/// <summary>
 		/// Add unique item before first item of collection
 		/// </summary>
@@ -49,9 +46,7 @@ namespace CrazyPanda.UnityCore.Collections
 		/// <param name="newItem">exist item</param>
 		/// <param name="oldItem">new item to add</param>
 		void AddBefore( T newItem, T oldItem );
-		#endregion
 
-		#region Public Properties
 		/// <summary>
 		/// First item of collection
 		/// </summary>
@@ -61,7 +56,6 @@ namespace CrazyPanda.UnityCore.Collections
 		/// Last item of collection
 		/// </summary>
 		T Last { get; }
-		#endregion
 	}
 	//.............................................................................................................//
 	//.............................................................................................................//

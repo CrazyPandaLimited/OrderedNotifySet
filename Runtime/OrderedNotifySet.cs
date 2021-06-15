@@ -17,20 +17,15 @@ namespace CrazyPanda.UnityCore.Collections
 		//Parameters block
 		//.........................................................................................................//
 
-		#region Private Fields
 		private readonly LinkedList< T > _elementsList = new LinkedList< T >();
 		private readonly Dictionary< T, LinkedListNode< T > > _elementsMap = new Dictionary< T, LinkedListNode< T > >();
-		#endregion
 
 		//.........................................................................................................//
 		//Interface block
 		//.........................................................................................................//
 
-		#region Public Events
 		public event Action< NotifySetChangedEventArgs< T > > OnCollectionChanged;
-		#endregion
 
-		#region Public Properties
 		public T First
 		{
 			get
@@ -60,9 +55,7 @@ namespace CrazyPanda.UnityCore.Collections
 		}
 		public int Count => _elementsList.Count;
 		public bool IsReadOnly => false;
-		#endregion
 
-		#region Public Members
 		public IEnumerator< T > GetEnumerator()
 		{
 			return _elementsList.GetEnumerator();
@@ -148,13 +141,11 @@ namespace CrazyPanda.UnityCore.Collections
 		{
 			AddElementInternal( item, newItem, false );
 		}
-		#endregion
 
 		//.........................................................................................................//
 		//Private Logic
 		//.........................................................................................................//
 
-		#region Private Members
 		/// <summary>
 		/// Get exist entry from collection
 		/// </summary>
@@ -251,7 +242,6 @@ namespace CrazyPanda.UnityCore.Collections
             OnCollectionChanged?.Invoke( NotifySetChangedEventArgs< T >.ConstructAddFirst( item ) );
 			return true;
 		}
-		#endregion
 	}
 	//.............................................................................................................//
 	//.............................................................................................................//

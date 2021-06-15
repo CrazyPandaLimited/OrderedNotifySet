@@ -4,22 +4,17 @@ namespace CrazyPanda.UnityCore.Collections
 {
 	public sealed class NotifySetChangedEventArgs<T> : EventArgs
 	{
-		#region Public Fields
 		public readonly T oldItem;
 		public readonly T newItem;
 		public readonly NotifySetChangeActionType changeActionTypeType;
-		#endregion
 
-		#region Private Constructors
 		private NotifySetChangedEventArgs( NotifySetChangeActionType changeActionTypeType, T oldItem, T newItem )
 		{
 			this.oldItem = oldItem;
 			this.newItem = newItem;
 			this.changeActionTypeType = changeActionTypeType;
 		}
-		#endregion
 
-		#region Public Static Members
 
 		/// <summary>
 		/// Construct NotifySetChangedEventArgs for remove item from collection
@@ -60,6 +55,5 @@ namespace CrazyPanda.UnityCore.Collections
 		{
 			return new NotifySetChangedEventArgs< T >( NotifySetChangeActionType.AddFirst, default, item );
 		}
-		#endregion
 	}
 }
